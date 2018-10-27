@@ -7,15 +7,78 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- css pages -->
-        <link rel="stylesheet" href="../resources/style.css">
+        <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
         <!-- document info -->
         <title>StockBoi</title>
 
     </head>
 
-    <body style="width: 95%; text-align: center; padding: 5%; margin: auto;">
-        <h1>Results of StockBoi</h1>
-        <p>There is currently nothing here...</p>
+    <body>
+        <h1>StockBoi</h1>
+        <h2>showing results for stock: {{ stock_dict['stock_name'] }}</h2>
+        
+        <div class="overall_result">
+                
+            <h3>Overall outcome:
+            {% if ( analysis_result.metadata['overall_score'] < -0.6 ) %}
+            <!--  2 down arrows -- very bad -->
+            Very Negative
+            <i class="fas fa-long-arrow-alt-down"></i>
+            <i class="fas fa-long-arrow-alt-down"></i>
+            {% elif ( analysis_result.metadata['overall_score'] < -0.2 ) %}
+            <!--  single down arrow -- bad -->
+            Negative
+            <i class="fas fa-long-arrow-alt-down"></i>
+            {% elif ( analysis_result.metadata['overall_score'] < 0.2 ) %}
+            <!--  neutral line -- neutral -->
+            Neutral
+            <i class="fas fa-minus"></i>
+            {% elif ( analysis_result.metadata['overall_score'] < 0.6 ) %}
+            <!--  single up -- good -->
+            Positive
+            <i class="fas fa-long-arrow-alt-up"></i>
+            {% else %}
+            <!--  double up arrow -- very good -->
+            Very Positive
+            <i class="fas fa-long-arrow-alt-up"></i>
+            <i class="fas fa-long-arrow-alt-up"></i>
+            {% endif %}
+            </h3> 
+            
+        </div>
+
+        
+        <div class="content">
+            <div class="left_column">
+                
+                <u>Relevent articles for {{ stock_dict['stock_name'] }}</u>
+                
+                {% for key, value in analysis_result.iteritems() %}
+                <div class="article">
+                    <p><strong>{{ value['headline'] }}</strong></p>
+                    <p>{{ value['text1'] }}</p>
+                    <p>{{ value['text2'] }}</p>
+                    <p>{{ value['text3'] }}</p>
+                    <p><small style="float: left">{{ value['date_time'] }}</small><small style="float: right">{{ value['certainty'] }}</small></p>
+                </div>
+                {% endfor %}
+
+            </div>
+
+            <div class="right_column">
+                
+                <div class="stock_chart">
+                    chart??
+                </div>
+
+                <div class="share_price">
+                    share price here...
+                </div>
+
+            </div>
+            
+        </div>
     </body>
 </html>

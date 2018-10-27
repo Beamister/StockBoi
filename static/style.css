@@ -1,0 +1,78 @@
+body {
+    width: 95%;
+    text-align: center;
+    padding: 5%;
+    margin: auto;
+}
+
+input {
+    width: 95%;
+    max-width: 500px;
+    height: 25px;
+    text-align: center;
+}
+
+button {
+    height: 25px;
+}
+
+p {
+    margin: auto;
+}
+
+.content {
+/*
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+*/
+}
+
+.overall_result {
+    width: 95%;
+    border: 1px solid green;
+}
+
+.left_column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+    width: 55%;
+    border: 5px solid black;
+}
+
+.right_column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+    width: 35%;
+    border: 5px solid black;
+}
+
+.article {
+    border: 1px solid red;
+    text-align: left;
+    padding: 2%;
+}
+
+.stock_chart {
+    border: 1px solid red;
+}
+
+.share_price {
+    border: 1px solid red;
+}
+
+.fa-long-arrow-alt-down {
+    color: red;
+}
+
+.fa-long-arrow-alt-up {
+    color: green;
+}
+
+.fa-minus {
+    color: blue;
+}

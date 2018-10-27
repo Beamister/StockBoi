@@ -7,18 +7,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- css pages -->
-        <link rel="stylesheet" href="../resources/style.css">
+        <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
 
         <!-- document info -->
         <title>StockBoi</title>
 
     </head>
 
-    <body style="width: 95%; text-align: center; padding: 5%; margin: auto;">
+    <body>
         <h1>Welcome to StockBoi</h1>
         <p>There is currently nothing here...</p>
         <form action="result" method="GET">
-            <input name="stock" type="text" placeholder="Search for a stock here">
+            <input name="stock_name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder='Search for a stock here'">
             <button type="submit">GO!</button>
         </form>
     </body>
