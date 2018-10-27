@@ -10,9 +10,9 @@ app = Flask(__name__)
 def render_home():
     return render_template('index.html')
 
-@app.route('/result', methods=['POST'])
+@app.route('/result')
 def render_result():
-    stock = request.form['stock']
+    stock = request.args['stock']
     scraped_data = scrape(stock)
     analysis_result = analyse(scraped_data)
-    return render_template('results.html', suggestion=analysis_result)
+    return render_template('results.html')

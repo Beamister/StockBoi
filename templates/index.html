@@ -7,19 +7,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- css pages -->
-        <link rel="stylesheet" href="../resources/style.css">
+<!--        <link rel="stylesheet" href="../resources/style.css">-->
 
         <!-- document info -->
         <title>StockBoi</title>
 
     </head>
 
-    <body>
+    <body style="width: 95%; text-align: center; padding: 5%; margin: auto;">
         <h1>Welcome to StockBoi</h1>
         <p>There is currently nothing here...</p>
-        <div>
-            <input method="post" name="stock" type="text" placeholder="Search for a stock here">
-            <button type="submit" href="/result">GO!</button>
-        </div>
+        <form action="result" method="GET">
+            <input name="stock" type="text" placeholder="Search for a stock here">
+            <button type="submit">GO!</button>
+        </form>
+<!--
+        <form action="result" method="GET">
+            <button>click me</button>  
+        </form>
+-->
+        
     </body>
 </html>
