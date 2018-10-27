@@ -25,7 +25,16 @@ class StockCrawler(Spider):
         result_titles = response.css(".news-link::text").extract()
         print(result_titles)
 
+        print(response)
+        for article in result_links:
+        #   article = xpath shit
+        #   result_articles =
 
+        result_articles = response.xpath('//div[@id="article-body"]/p/text()').extract()
+        print(result_articles)
+
+
+# Takes a stock name - Returns a dictionary of information to do sentiment analysis on
 def scrape(stock):
 
     urlsToPass = [base_request + stock, base_request + "intc"]
