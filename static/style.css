@@ -21,16 +21,13 @@ p {
 }
 
 .content {
-/*
     display: flex;
     justify-content: space-around;
     margin: auto;
-*/
 }
 
 .overall_result {
     width: 95%;
-    border: 1px solid green;
 }
 
 .left_column {
@@ -39,7 +36,6 @@ p {
     justify-content: space-around;
     align-content: space-around;
     width: 55%;
-    border: 5px solid black;
 }
 
 .right_column {
@@ -48,11 +44,9 @@ p {
     justify-content: space-around;
     align-content: space-around;
     width: 35%;
-    border: 5px solid black;
 }
 
 .article {
-    border: 1px solid red;
     text-align: left;
     padding: 2%;
 }
