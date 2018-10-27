@@ -4,3 +4,15 @@ body {
     padding: 5%;
     margin: auto;
 }
+
+input {
+    width: 95%;
+    max-width: 500px;
+    height: 25px;
+    text-align: center;
+    
+}
+
+button {
+    height: 25px;
+}
