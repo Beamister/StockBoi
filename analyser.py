@@ -5,23 +5,6 @@ import math
 
 from nltk.corpus import wordnet
 
-test_article = {'datetime' : "",
-                'headline' : "AMD's stock price has gotten cut in half in less than 2 months (AMD)",
-                'text' : """AMD's stock plunged more than 9% Friday after rival Intel posted better than expected results and raised its guidance.
-Friday's selling pushed shares down as much as 50% from their September peak. 
-Watch AMD trade live here.
-Things just keep getting worse for AMD shareholders. 
-The former stock-market darling, which saw its stock price explode by as much as 230% in the first 8-1/2 months of the year, has seen its value get cut in half over the past six weeks as disappointing earnings and a comeback by its key rival have decimated shares. 
-AMD's stock soared to more than $34 a share in September as optimism surrounding the company's new 7-nanometer chip, and rival Intel's production problems for its 10-nanometer chip made it one of the year's top performers.
-
-But things took a turn in mid-September after a research report said Intel's production problems may not be as bad as feared. AMD shares quickly tumbled into a bear market, down at least 20% from their recent peak.
-They managed to find support in the $25 area before cratering 15% on Wednesday, after third-quarter revenue and fourth-quarter revenue guidance missed the mark. And the selling continued on Friday after Intel reported better than expected results and raised its guidance for the fiscal year. As the dust cleared Friday afternoon, AMD's stock price had fallen as much as 50% from its September peak.
-But Wall Street analysts remain optimistic on AMD. They have an average price target of $23.58, according to data compiled by Bloomberg. 
-"3Q EPS beat by $0.01 due to better margins, but 4Q18 revs/EPS missed by 90 bps and $0.02 due to excess GPU channel inventories," Jefferies analyst Mark Lipacis said in a note sent out to clients on Thursday. 
-"On the positive side, it appears AMD will ship a 7nm server MPU well ahead of Intel, as well as a 7nm data center GPU well ahead of NVDA. We expect this will translate to share gains and continued GM expansion. We lower our estimates, but view the 23% aftermarket sell off as an overreaction, and we are particular buyers on weakness."
-
-He has a "buy" rating and $30 price target — 71% above where shares were trading on Friday. """}
-
 def sigmoid(x):
     return 1 / (1 + ((2 * math.e) ** (-(x -600) / 400)))
 
@@ -104,5 +87,3 @@ def analyse(data):
     result['metadata']['overall_score'] = statistics.mean(article_scores)
     result['metadata']['overall_certainty'] = statistics.mean(article_scores)
     return result
-
-print(rate_article_sentiment(test_article))
