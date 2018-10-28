@@ -38,7 +38,42 @@ def render_result():
                     print (stock_dict['stock_name'])
                     break
 
-        scraped_data = scrape(stock_dict['stock_name'])
+        # waiting for bois to finish
+        # scraped_data = scrape(stock_dict['stock_name'])
+
+        # temp input to test and submit with
+        scraped_data={'metadata':{'name':'nameplaceholder',
+                                  'article_count':3},
+                      'articles':{0:{'headline':'headline0placeholed',
+                                     'text': 'text0placeholed',
+                                     'datetime':'datetime0placeholder'
+                                    },
+                                  1:{'headline':'headline1placeholed',
+                                     'text': 'text1placeholed',
+                                     'datetime':'datetime1placeholder'
+                                    },
+                                  2:{'headline':'headline2placeholed',
+                                     'text': 'text2placeholed',
+                                     'datetime':'datetime2placeholder'
+                                    },
+                                  3:{'headline':'headline3placeholed',
+                                     'text': 'text3placeholed',
+                                     'datetime':'datetime3placeholder'
+                                    },
+                                  4:{'headline':'headline4placeholed',
+                                     'text': 'text4placeholed',
+                                     'datetime':'datetime4placeholder'
+                                    },
+                                  5:{'headline':'headline5placeholed',
+                                     'text': 'text5placeholed',
+                                     'datetime':'datetime5placeholder'
+                                    },
+                                  6:{'headline':'headline6placeholed',
+                                     'text': 'text6placeholed',
+                                     'datetime':'datetime6placeholder'
+                                    }
+                                 }
+                     }
         analysis_result = analyse(scraped_data)
         return render_template('results.html',stock_dict=stock_dict,analysis_result=analysis_result)
     else:

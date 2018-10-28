@@ -51,6 +51,8 @@ def rate_article_sentiment(article):
     headline_blob = TextBlob(article['headline'])
     #remove 0 values from polarities
     sentence_polarities = [value for value in sentence_polarities if value != 0]
+    if len(sentence_polarities) == 0:
+        sentence_polarities = [0]
     print("Polarities: ", sentence_polarities)
     score = statistics.mean(sentence_polarities)
     score = statistics.mean([score, headline_blob.polarity]) * 10
@@ -65,7 +67,7 @@ def rate_article_sentiment(article):
             'certainty' : certainty, 'absolute_score' : abs(score)}
 
 def get_score(dict):
-    return dict['absolute_score']
+    return dict[1]
 
 def analyse(data):
     stock_name = data['metadata']['name']
@@ -76,13 +78,17 @@ def analyse(data):
     article_certainties = []
     analysis_results = {}
     for article_index in range(article_count):
-        article_analysis = rate_article_sentiment(data[article_index])
+        article_analysis = rate_article_sentiment(data['articles'][article_index])
         analysis_results[article_index] = article_analysis
         article_scores.append(article_analysis['score'])
         article_certainties.append(article_analysis['certainty'])
-    sorted_indices = sorted(analysis_results.values(), key=get_score)
+    list1 = []
+    for i in range(article_count):
+        list1.append([i, analysis_results[i]['absolute_score']])
+    sorted_indices = sorted(list1, key=get_score)
+    print(sorted_indices)
     for result_article_index in range(article_count):
-        result['articles'][result] = analysis_results[sorted_indices[result_article_index]]
+        result['articles'][result_article_index] = analysis_results[sorted_indices[result_article_index][0]]
     result['articles'] = sorted(analysis_results)
     result['metadata']['overall_score'] = statistics.mean(article_scores)
     result['metadata']['overall_certainty'] = statistics.mean(article_scores)
