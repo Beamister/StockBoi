@@ -3,21 +3,32 @@ body {
     text-align: center;
     padding: 5%;
     margin: auto;
+    font-family: 'Open Sans', sans-serif;
+    font-size: large;
 }
 
 input {
     width: 95%;
     max-width: 500px;
-    height: 25px;
+    height: 30px;
     text-align: center;
 }
 
-button {
-    height: 25px;
+h1 {
+  color: rgb(227, 114, 32)/*ORANGE*/;
 }
 
 p {
     margin: auto;
+    color: rgb(1, 138, 149)/*GREEN*/;
+}
+
+form {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .content {
@@ -28,6 +39,7 @@ p {
 
 .overall_result {
     width: 95%;
+    border-bottom: 2px solid rgb(1, 138, 149)/*GREEN*/;
 }
 
 .left_column {
@@ -35,28 +47,24 @@ p {
     flex-direction: column;
     justify-content: space-around;
     align-content: space-around;
-    width: 55%;
+    width: 50%;
+    max-width: 600px;
+    min-width: 250px;
 }
 
 .right_column {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-content: space-around;
-    width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+    width: auto;
+    min-width: 250px;
 }
 
 .article {
     text-align: left;
     padding: 2%;
-}
-
-.stock_chart {
-    border: 1px solid red;
-}
-
-.share_price {
-    border: 1px solid red;
+    width: auto;
 }
 
 .fa-long-arrow-alt-down {
