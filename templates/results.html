@@ -9,14 +9,16 @@
         <!-- css pages -->
         <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <!-- document info -->
         <title>StockBoi</title>
+
+
 
     </head>
 
     <body>
-        <h1>StockBoi</h1>
+        <h1 style="font-size: xx-large;">StockBoi</h1>
         <h2>showing results for stock: {{ stock_dict['stock_name'] }}</h2>
 
         <div class="overall_result">
@@ -61,7 +63,16 @@
                       <p>{{ value['text1'] }}</p>
                       <p>{{ value['text2'] }}</p>
                       <p>{{ value['text3'] }}</p>
-                      <p><small style="float: left">{{ value['date_time'] }}</small><small style="float: right">Certainty: {{ value['certainty'] }}</small></p>
+                      <p>
+                        <small style="float: left">
+                          <i>
+                            {{ value['date_time'] }}
+                          </i>
+                        </small>
+                        <small style="float: right">
+                          Certainty: {{ value['certainty'] }}
+                        </small>
+                      </p>
                   </div>
                   {% endif %}
                 {% endfor %}
@@ -69,14 +80,8 @@
             </div>
 
             <div class="right_column">
-
-                <div class="stock_chart">
-                  chart here?
-                </div>
-
-                <div class="share_price">
-                    share price here?
-                </div>
+              <iframe style="width: 130%; height:400px;" scrolling="yes" src="http://www.stockpricetoday.com/quote/{{stock_dict['stock_name']}}/">
+              </iframe>
 
             </div>
 

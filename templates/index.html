@@ -8,17 +8,25 @@
 
         <!-- css pages -->
         <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <!-- document info -->
         <title>StockBoi</title>
 
     </head>
 
     <body>
-        <h1>Welcome to StockBoi</h1>
+        <h1 style="font-size: xx-large;">Welcome to StockBoi</h1>
         <form action="result" method="GET">
-            <input name="stock_name" type="text" onfocus="this.placeholder = ''" placeholder="Search for a stock here" onblur="this.placeholder= 'Search for a stock here'">
-            <button type="submit">GO!</button>
+          <span style="width:100%;">
+            <input style="font-size: medium" name="stock_name" type="text" style="height:100%" onfocus="this.placeholder = ''" placeholder="Please enter the name of a stock ticker" onblur="this.placeholder= 'Please enter the name of a stock ticker'">
+            <button style="height:100%;" type="submit"><i class="fas fa-search fa-2x"></i></button>
+          </span>
         </form>
+
+        <br>
+        <br>
+        <i class="fas fa-chart-area fa-10x"></i>
     </body>
 </html>
