@@ -87,6 +87,7 @@ def analyse(data):
         list1.append([i, analysis_results[i]['absolute_score']])
     sorted_indices = sorted(list1, key=get_score)
     print(sorted_indices)
+    print(analysis_results)
     for result_article_index in range(article_count):
         result['articles'][result_article_index] = analysis_results[sorted_indices[result_article_index][0]]
     result['articles'] = sorted(analysis_results)
