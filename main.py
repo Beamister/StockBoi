@@ -21,7 +21,6 @@ def render_home():
 
 @app.route('/result')
 def render_result():
-<<<<<<< HEAD
     if request.method=='GET':
         # this gets stock_dict_unset as key value pair ('stock_name', value)
         stock_dict_unset = request.args
@@ -40,7 +39,7 @@ def render_result():
                     break
 
         # waiting for bois to finish
-        scraped_data = scrape(stock_dict['stock_name'])
+        scraped_data = scrape_stock(stock_dict['stock_name'])
 
         # temp input to test and submit with
         # scraped_data={'metadata':{'name':'nameplaceholder',
