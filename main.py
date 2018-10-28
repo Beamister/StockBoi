@@ -27,14 +27,14 @@ def render_result():
         stock_dict = {}
 
         if (stock_dict_unset['stock_name'].upper() in symbols_dict):
-            print(stock_dict_unset['stock_name'].upper() + " is a key")
+            print(stock_dict_unset['stock_name'] + " is a key")
             stock_dict['stock_name'] = stock_dict_unset['stock_name'].upper()
             print(stock_dict)
         else:
             for key, value in symbols_dict.iteritems():
                 if stock_dict_unset['stock_name'].upper() in value:
                     stock_dict['stock_name'] = key
-                    print("stock name changed from " + stock_dict_unset['stock_name'].upper() + " to " + key)
+                    print("stock name changed from " + stock_dict_unset['stock_name'] + " to " + key)
                     print (stock_dict['stock_name'])
                     break
 
